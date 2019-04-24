@@ -1,0 +1,15 @@
+                                          README
+
+The performance graph is attached as "analysis.png". 
+I did eight different experiments by changing hyper-parameters like the number of iterations,  the value of learning rate, and the dimension of hidden layer (the number of neurons in hidden layer) and record the result. 
+
+In the first three experiments, I only change the number of iterations by assigning 20, 50, and 100 to it and keep other hyper-parameters the same. The training accuracy should go up with the number of iterations increasing. As shown in the plot, the training accuracy and dev accuracy stay the steady during about 1 to 3 iteration and begin to increase after that. At about the 6th iteration, the training and dev accuracy become steady again and are almost the same even the number of iterations goes up to 100. This means that under the condition of learning rate equals to 0.1 and dimension of hidden layer equals to 5, the highest accuracy the network could reach is about 85%. No matter how many iterations we do, it stays steady. Therefore, we may think about changing learning rate. 
+
+The 4th and 5th experiments show the change of accuracy under the conditions of iterations equal to 100, the learning rate is 0.01 and 0.5, and the number of neurons is 5. When learning rate is 0.01 which is smaller than previous experiments, the accuracy of training set and dev set stay at a number for a long time, about 76 iterations, and begin to increase after that point and finally stay steady at accuracy of about 85%. This result makes sense because the learning rate becomes smaller, so the convergency becomes slower. However, when with such a small learning rate, the highest accuracy of dev set is still about 85%. Therefore, we may be able to guess what will happen if we change the learning rate to be 0.5, bigger than before: the accuracy increase at the beginning of iteration and comes to highest point and stay steady. One interesting thing we can find is that the dev accuracy is a little bit lower than the training accuracy, which means overfitting happens. 
+
+In 6th experiment, I use 10 as the number of neurons in the hidden layer, and keep iterations as 100 and learning rate as 0.5. Compared with 5th experiment, the accuracy of dev set reaches it highest accuracy (about 85%) and goes down, but the accuracy of training set keeps increasing. So in this case, overfitting becomes more serious. 
+
+In 7th experiment, I adopt 0.1 as learning rate, 10 neurons and 100 iterations. Compared with 3rd experiment, the results of these two experiments look similar, but these is overfitting obviously. 
+
+In 8th experiment, I adopt 0.01 as learning rate, 10 neurons and 100 iterations. Compared with the result of 4th experiment, the accuracy of training set and dev set go up much more earlier (iteration of 26 vs iteration of 75). Besides, dev accuracy is always higher than training accuracy. That is, by increasing the number of neurons in hidden layer, our gradient converges more quickly. 
+
